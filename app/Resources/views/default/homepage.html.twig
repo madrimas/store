@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,6 +22,7 @@
     </style>
     <body class="w3-content" style="max-width:1200px">
 
+
     <!-- Sidebar/menu -->
     <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
         <div class="w3-container w3-display-container w3-padding-16">
@@ -29,13 +32,11 @@
         <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
             <a href="{{ path('app_default_showshirts') }}" class="w3-bar-item w3-button">Koszulki</a>
             <a href="{{ path('app_default_showshorts') }}" class="w3-bar-item w3-button">Spodenki</a>
-            <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align"
-               id="myBtn">
+            <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-left-align">
                 Zestawy <i class="fa fa-caret-down"></i>
             </a>
             <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-                <a href="{{ path('app_default_showhomekits') }}" class="w3-bar-item w3-button w3-light-grey"><i
-                            class="fa fa-caret-right w3-margin-right"></i>Domowe</a>
+                <a href="{{ path('app_default_showhomekits') }}" class="w3-bar-item w3-button">Domowe</a>
                 <a href="{{ path('app_default_showawaykits') }}" class="w3-bar-item w3-button">Wyjazdowe</a>
                 <a href="{{ path('app_default_showthirdkits') }}" class="w3-bar-item w3-button">Trzecie</a>
             </div>
@@ -50,6 +51,7 @@
         {% if is_granted('IS_AUTHENTICATED_FULLY') == 0 %}
             <a href="{{ path('app_register_register') }}" class="w3-bar-item w3-button w3-padding">Rejestracja</a>
         {% endif %}
+
     </nav>
 
     <!-- Top menu on small screens -->
@@ -71,7 +73,7 @@
 
         <!-- Top header -->
         <header class="w3-container w3-xlarge">
-            <p class="w3-left">Domowe</p>
+            <p class="w3-left">Homepage</p>
             <p class="w3-right">
                 <a href="{{ path('app_default_getshoppingcart') }}"
                    class="fa fa-shopping-cart w3-margin-right w3-button"></a>
@@ -80,7 +82,7 @@
 
         <!-- Image header -->
         <div class="w3-display-container w3-container">
-            <img src="{{ asset('images/head.jpg') }}" style="width: 100%"/>
+            <img src="{{ asset('images/head.jpg') }}" style="width:100%"/>
             <div class="w3-display-bottomright w3-text-white" style="padding:24px 48px" align="right">
                 <h1 class="w3-hide-small">KOLEKCJA 17/18</h1>
                 <p><a href="{{ path('app_default_showhomekits') }}"
@@ -88,124 +90,6 @@
             </div>
         </div>
 
-        <!-- Product grid -->
-        <div class="w3-row w3-grayscale">
-            <div class="w3-col l3 s6">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="w3-col l3 s6">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="w3-col l3 s6">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="w3-col l3 s6">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
 
         <!-- Footer -->
         <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
