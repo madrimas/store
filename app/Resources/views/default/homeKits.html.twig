@@ -87,15 +87,25 @@
                       class="w3-button w3-black w3-padding-large w3-large">ZAMÓW TERAZ</a></p>
             </div>
         </div>
-
+        <br/>
         <!-- Product grid -->
         <div class="w3-row w3-grayscale">
             <div class="w3-col l3 s6">
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     {% for key in viewHomeKits %}
@@ -106,38 +116,19 @@
                 </div>
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="w3-col l3 s6">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </div>
-                    {% for key in viewHomeKits %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     {% for key in viewHomeKits %}
@@ -151,9 +142,19 @@
             <div class="w3-col l3 s6">
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     {% for key in viewHomeKits %}
@@ -164,9 +165,19 @@
                 </div>
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     {% for key in viewHomeKits %}
@@ -180,9 +191,19 @@
             <div class="w3-col l3 s6">
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     {% for key in viewHomeKits %}
@@ -193,9 +214,68 @@
                 </div>
                 <div class="w3-container">
                     <div class="w3-display-container">
-                        <img src="{{ asset('images/homeshirt.jpg') }}" style="width: 100%"/>
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
                         <div class="w3-display-middle w3-display-hover">
-                            <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i></button>
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% for key in viewHomeKits %}
+                        <div>
+                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="w3-col l3 s6">
+                <div class="w3-container">
+                    <div class="w3-display-container">
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
+                        <div class="w3-display-middle w3-display-hover">
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% for key in viewHomeKits %}
+                        <div>
+                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="w3-container">
+                    <div class="w3-display-container">
+                        <img src="{{ asset('images/homeKit.jpg') }}" style="width: 100%"/>
+                        <div class="w3-display-middle w3-display-hover">
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity > 0 %}
+                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewHomeKits %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                     {% for key in viewHomeKits %}

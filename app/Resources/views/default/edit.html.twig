@@ -1,13 +1,16 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
+    {% block title %}Panel administratora{% endblock %}
+
     <br/>
     <a href="{{ path('app_default_getupdateshirts') }}" class="w3-bar-item w3-button">Edycja koszulek</a><br/>
     <a href="{{ path('app_default_getupdateshorts') }}" class="w3-bar-item w3-button">Edycja spodenek</a><br/>
     <a href="{{ path('app_default_getupdatehomekits') }}" class="w3-bar-item w3-button">Edycja zestawów domowych</a>
     <br/>
-    <a href="{{ path('app_default_getupdatehomekits') }}" class="w3-bar-item w3-button">Edycja koszulek</a><br/>
-    <a href="{{ path('app_default_getupdatehomekits') }}" class="w3-bar-item w3-button">Edycja koszulek</a><br/>
-    <a href="{{ path('app_default_getupdatehomekits') }}" class="w3-bar-item w3-button">Edycja koszulek</a><br/>
+    <a href="{{ path('app_default_getupdateawaykits') }}" class="w3-bar-item w3-button">Edycja zestawów wyjazdowych</a>
+    <br/>
+    <a href="{{ path('app_default_getupdatethirdkits') }}" class="w3-bar-item w3-button">Edycja zestawów trzecich</a>
+    <br/>
 
 {% endblock %}

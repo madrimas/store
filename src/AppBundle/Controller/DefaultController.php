@@ -2,9 +2,11 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Away;
 use AppBundle\Entity\Home;
 use AppBundle\Entity\Shirts;
 use AppBundle\Entity\Shorts;
+use AppBundle\Entity\Third;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -79,7 +81,11 @@ class DefaultController extends Controller
      */
     public function showAwayKits()
     {
-        return new Response("Zestawy wyjazdowe");
+        $away = $this->getDoctrine()
+            ->getRepository(Away::class)
+            ->findAll();
+
+        return $this->render('default/awayKits.html.twig', array('viewAwayKits' => $away));
     }
 
     /**
@@ -87,7 +93,11 @@ class DefaultController extends Controller
      */
     public function showThirdKits()
     {
-        return new Response("Zestawy trzecie");
+        $third = $this->getDoctrine()
+            ->getRepository(Third::class)
+            ->findAll();
+
+        return $this->render('default/thirdKits.html.twig', array('viewThirdKits' => $third));
     }
 
     /**
@@ -178,9 +188,6 @@ class DefaultController extends Controller
         return $this->render('default/edit.html.twig');
     }
 
-    /**
-     * @Route("/add")
-     */
     public function shirtsCreateAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -227,6 +234,40 @@ class DefaultController extends Controller
         return new Response('Saved new homeKits with ID ' . $home->getId());
     }
 
+    public function awayCreateAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $away = new Away();
+        $away->setName('Wyjazdowy');
+        $away->setQuantity(50);
+        $away->setPrice(249);
+
+        $em->persist($away);
+        $em->flush();
+
+        return new Response('Saved new awayKits with ID ' . $away->getId());
+    }
+
+    /**
+     * @Route("/add")
+     */
+    public function thirdCreateAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $third = new Third();
+        $third->setName('Trzeci');
+        $third->setQuantity(25);
+        $third->setPrice(349);
+
+        $em->persist($third);
+        $em->flush();
+
+        return new Response('Saved new thirdKits with ID ' . $third->getId());
+    }
+
+
     /**
      * @Route("/edit/updateShirts")
      * @param Request $request
@@ -236,7 +277,7 @@ class DefaultController extends Controller
     {
         $shirtsID = 1;
         $em = $this->getDoctrine()->getManager();
-        $shirts = $em->getRepository(Koszulki::class)->find($shirtsID);
+        $shirts = $em->getRepository(Shirts::class)->find($shirtsID);
 
         $form = $this->createFormBuilder($shirts)
             ->add('name', TextType::class)
@@ -319,6 +360,74 @@ class DefaultController extends Controller
             //Create the user
 
             $em->persist($home);
+            $em->flush();
+
+            return $this->redirectToRoute('edit');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/edit/updateAwayKits")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function getUpdateAwayKits(Request $request)
+    {
+        $awayID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $away = $em->getRepository(Away::class)->find($awayID);
+
+        $form = $this->createFormBuilder($away)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Zaktualizuj'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            //Create the user
+
+            $em->persist($away);
+            $em->flush();
+
+            return $this->redirectToRoute('edit');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/edit/updateThirdKits")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function getUpdateThirdKits(Request $request)
+    {
+        $thirdID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $third = $em->getRepository(Third::class)->find($thirdID);
+
+        $form = $this->createFormBuilder($third)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Zaktualizuj'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            //Create the user
+
+            $em->persist($third);
             $em->flush();
 
             return $this->redirectToRoute('edit');
