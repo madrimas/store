@@ -72,10 +72,6 @@
         <!-- Top header -->
         <header class="w3-container w3-xlarge">
             <p class="w3-left">Spodenki</p>
-            <p class="w3-right">
-                <a href="{{ path('app_default_getshoppingcart') }}"
-                   class="fa fa-shopping-cart w3-margin-right w3-button"></a>
-            </p>
         </header>
 
         <!-- Image header -->
@@ -97,8 +93,8 @@
                         <div class="w3-display-middle w3-display-hover">
                             {% for key in viewShorts %}
                                 {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
                                 {% endif %}
                             {% endfor %}
                             {% for key in viewShorts %}
@@ -120,57 +116,8 @@
                         <div class="w3-display-middle w3-display-hover">
                             {% for key in viewShorts %}
                                 {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
-                                {% endif %}
-                            {% endfor %}
-                            {% for key in viewShorts %}
-                                {% if key.quantity < 1 %}
-                                    <button class="w3-button w3-black">Wyprzedane!</button>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% for key in viewShorts %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="w3-col l3 s6">
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/shorts.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            {% for key in viewShorts %}
-                                {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
-                                {% endif %}
-                            {% endfor %}
-                            {% for key in viewShorts %}
-                                {% if key.quantity < 1 %}
-                                    <button class="w3-button w3-black">Wyprzedane!</button>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% for key in viewShorts %}
-                        <div>
-                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="w3-container">
-                    <div class="w3-display-container">
-                        <img src="{{ asset('images/shorts.jpg') }}" style="width: 100%"/>
-                        <div class="w3-display-middle w3-display-hover">
-                            {% for key in viewShorts %}
-                                {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
                                 {% endif %}
                             {% endfor %}
                             {% for key in viewShorts %}
@@ -195,8 +142,8 @@
                         <div class="w3-display-middle w3-display-hover">
                             {% for key in viewShorts %}
                                 {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
                                 {% endif %}
                             {% endfor %}
                             {% for key in viewShorts %}
@@ -218,8 +165,8 @@
                         <div class="w3-display-middle w3-display-hover">
                             {% for key in viewShorts %}
                                 {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
                                 {% endif %}
                             {% endfor %}
                             {% for key in viewShorts %}
@@ -244,8 +191,8 @@
                         <div class="w3-display-middle w3-display-hover">
                             {% for key in viewShorts %}
                                 {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
                                 {% endif %}
                             {% endfor %}
                             {% for key in viewShorts %}
@@ -267,8 +214,57 @@
                         <div class="w3-display-middle w3-display-hover">
                             {% for key in viewShorts %}
                                 {% if key.quantity > 0 %}
-                                    <button class="w3-button w3-black">Kup teraz! <i class="fa fa-shopping-cart"></i>
-                                    </button>
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewShorts %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% for key in viewShorts %}
+                        <div>
+                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="w3-col l3 s6">
+                <div class="w3-container">
+                    <div class="w3-display-container">
+                        <img src="{{ asset('images/shorts.jpg') }}" style="width: 100%"/>
+                        <div class="w3-display-middle w3-display-hover">
+                            {% for key in viewShorts %}
+                                {% if key.quantity > 0 %}
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
+                                {% endif %}
+                            {% endfor %}
+                            {% for key in viewShorts %}
+                                {% if key.quantity < 1 %}
+                                    <button class="w3-button w3-black">Wyprzedane!</button>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% for key in viewShorts %}
+                        <div>
+                            <p>{{ key.name }}<br><b>{{ key.price }}zł</b></p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="w3-container">
+                    <div class="w3-display-container">
+                        <img src="{{ asset('images/shorts.jpg') }}" style="width: 100%"/>
+                        <div class="w3-display-middle w3-display-hover">
+                            {% for key in viewShorts %}
+                                {% if key.quantity > 0 %}
+                                    <a href="{{ path('app_default_getshortstocart') }}" class="w3-button w3-black">Kup
+                                        teraz!<i class="fa fa-shopping-cart"></i></a>
                                 {% endif %}
                             {% endfor %}
                             {% for key in viewShorts %}

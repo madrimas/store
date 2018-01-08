@@ -173,11 +173,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/shoppingCart")
+     * @Route("/shoppingCart", name="shoppingCart")
      */
     public function getShoppingCart()
     {
-        return new Response("Koszyk");
+        return new Response("Zakup udany!");
     }
 
     /**
@@ -186,6 +186,216 @@ class DefaultController extends Controller
     public function getEdit()
     {
         return $this->render('default/edit.html.twig');
+    }
+
+    /**
+     * @Route("/getShirtToCart")
+     * @param Request $request
+     * @return Response
+     */
+    public function getShirtToCart(Request $request)
+    {
+        $shirtsID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $shirts = $em->getRepository(Shirts::class)->find($shirtsID);
+
+        $shirt = new Shirts();
+        $shirt->setName($shirts->getName());
+        $shirt->setQuantity(1);
+        $shirt->setPrice($shirts->getPrice());
+
+        $form = $this->createFormBuilder($shirt)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Kup!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form['quantity']->getData();
+            $shirt->setQuantity($data);
+            $shirts->setQuantity($shirts->getQuantity() - $shirt->getQuantity());
+
+            $em->persist($shirts);
+            $em->flush();
+
+            return $this->redirectToRoute('shoppingCart');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/getShortsToCart")
+     * @param Request $request
+     * @return Response
+     */
+    public function getShortsToCart(Request $request)
+    {
+        $shortsID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $shorts = $em->getRepository(Shorts::class)->find($shortsID);
+
+        $short = new Shorts();
+        $short->setName($shorts->getName());
+        $short->setQuantity(1);
+        $short->setPrice($shorts->getPrice());
+
+        $form = $this->createFormBuilder($short)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Kup!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form['quantity']->getData();
+            $short->setQuantity($data);
+            $shorts->setQuantity($shorts->getQuantity() - $short->getQuantity());
+
+            $em->persist($shorts);
+            $em->flush();
+
+            return $this->redirectToRoute('shoppingCart');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/getHomeToCart")
+     * @param Request $request
+     * @return Response
+     */
+    public function getHomeToCart(Request $request)
+    {
+        $homeID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $homeKits = $em->getRepository(Home::class)->find($homeID);
+
+        $homeKit = new Home();
+        $homeKit->setName($homeKits->getName());
+        $homeKit->setQuantity(1);
+        $homeKit->setPrice($homeKits->getPrice());
+
+        $form = $this->createFormBuilder($homeKit)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Kup!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form['quantity']->getData();
+            $homeKit->setQuantity($data);
+            $homeKits->setQuantity($homeKits->getQuantity() - $homeKit->getQuantity());
+
+            $em->persist($homeKits);
+            $em->flush();
+
+            return $this->redirectToRoute('shoppingCart');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/getAwayToCart")
+     * @param Request $request
+     * @return Response
+     */
+    public function getAwayToCart(Request $request)
+    {
+        $awayID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $awayKits = $em->getRepository(Away::class)->find($awayID);
+
+        $awayKit = new Away();
+        $awayKit->setName($awayKits->getName());
+        $awayKit->setQuantity(1);
+        $awayKit->setPrice($awayKits->getPrice());
+
+        $form = $this->createFormBuilder($awayKit)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Kup!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form['quantity']->getData();
+            $awayKit->setQuantity($data);
+            $awayKits->setQuantity($awayKits->getQuantity() - $awayKit->getQuantity());
+
+            $em->persist($awayKits);
+            $em->flush();
+
+            return $this->redirectToRoute('shoppingCart');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/getThirdToCart")
+     * @param Request $request
+     * @return Response
+     */
+    public function getThirdToCart(Request $request)
+    {
+        $thirdID = 1;
+        $em = $this->getDoctrine()->getManager();
+        $thirdKits = $em->getRepository(Third::class)->find($thirdID);
+
+        $thirdKit = new Third();
+        $thirdKit->setName($thirdKits->getName());
+        $thirdKit->setQuantity(1);
+        $thirdKit->setPrice($thirdKits->getPrice());
+
+        $form = $this->createFormBuilder($thirdKit)
+            ->add('name', TextType::class)
+            ->add('quantity', IntegerType::class)
+            ->add('price', IntegerType::class)
+            ->add('update', SubmitType::class, array('label' => 'Kup!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form['quantity']->getData();
+            $thirdKit->setQuantity($data);
+            $thirdKits->setQuantity($thirdKits->getQuantity() - $thirdKit->getQuantity());
+
+            $em->persist($thirdKits);
+            $em->flush();
+
+            return $this->redirectToRoute('shoppingCart');
+        }
+
+        return $this->render('default/update.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
     public function shirtsCreateAction()
