@@ -188,6 +188,8 @@ class DefaultController extends Controller
         return $this->render('default/edit.html.twig');
     }
 
+    //addToCartSection
+
     /**
      * @Route("/getShirtToCart")
      * @param Request $request
@@ -398,6 +400,8 @@ class DefaultController extends Controller
         ));
     }
 
+    //createSection
+
     public function shirtsCreateAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -477,6 +481,7 @@ class DefaultController extends Controller
         return new Response('Saved new thirdKits with ID ' . $third->getId());
     }
 
+    //updateSection
 
     /**
      * @Route("/edit/updateShirts")

@@ -41,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="373" column="0" lean-forward="false" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+            <state relative-caret-position="278">
+              <caret line="370" column="50" lean-forward="true" selection-start-line="370" selection-start-column="50" selection-end-line="370" selection-end-column="50" />
               <folding>
                 <element signature="e#943#971#0#PHP" expanded="true" />
                 <element signature="e#1209#1237#1#PHP" expanded="true" />
@@ -141,7 +141,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="awayKits.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="awayKits.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/awayKits.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="363">
@@ -573,7 +573,7 @@
       <workItem from="1515020337637" duration="476000" />
       <workItem from="1515244554937" duration="9379000" />
       <workItem from="1515326396042" duration="39323000" />
-      <workItem from="1515402272609" duration="5014000" />
+      <workItem from="1515402272609" duration="5132000" />
     </task>
     <servers />
   </component>
@@ -583,7 +583,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82857000" />
+    <option name="totallyTimeSpent" value="82975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -907,33 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="373" column="0" lean-forward="false" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
-          <folding>
-            <element signature="e#943#971#0#PHP" expanded="true" />
-            <element signature="e#1209#1237#1#PHP" expanded="true" />
-            <element signature="e#1464#1490#0#PHP" expanded="true" />
-            <element signature="e#1749#1775#0#PHP" expanded="true" />
-            <element signature="e#2035#2063#0#PHP" expanded="true" />
-            <element signature="e#2323#2351#0#PHP" expanded="true" />
-            <element signature="e#2615#2644#0#PHP" expanded="true" />
-            <element signature="e#4138#4162#1#PHP" expanded="true" />
-            <element signature="e#5355#5381#0#PHP" expanded="true" />
-            <element signature="e#6636#6662#0#PHP" expanded="true" />
-            <element signature="e#7931#7957#0#PHP" expanded="true" />
-            <element signature="e#9226#9252#0#PHP" expanded="true" />
-            <element signature="e#10540#10566#0#PHP" expanded="true" />
-            <element signature="e#13444#13470#0#PHP" expanded="true" />
-            <element signature="e#14479#14505#0#PHP" expanded="true" />
-            <element signature="e#15506#15532#0#PHP" expanded="true" />
-            <element signature="e#16533#16559#0#PHP" expanded="true" />
-            <element signature="e#17568#17594#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/thirdKits.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -990,6 +963,33 @@
         <state relative-caret-position="363">
           <caret line="271" column="41" lean-forward="false" selection-start-line="271" selection-start-column="41" selection-end-line="271" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="370" column="50" lean-forward="true" selection-start-line="370" selection-start-column="50" selection-end-line="370" selection-end-column="50" />
+          <folding>
+            <element signature="e#943#971#0#PHP" expanded="true" />
+            <element signature="e#1209#1237#1#PHP" expanded="true" />
+            <element signature="e#1464#1490#0#PHP" expanded="true" />
+            <element signature="e#1749#1775#0#PHP" expanded="true" />
+            <element signature="e#2035#2063#0#PHP" expanded="true" />
+            <element signature="e#2323#2351#0#PHP" expanded="true" />
+            <element signature="e#2615#2644#0#PHP" expanded="true" />
+            <element signature="e#4138#4162#1#PHP" expanded="true" />
+            <element signature="e#5355#5381#0#PHP" expanded="true" />
+            <element signature="e#6636#6662#0#PHP" expanded="true" />
+            <element signature="e#7931#7957#0#PHP" expanded="true" />
+            <element signature="e#9226#9252#0#PHP" expanded="true" />
+            <element signature="e#10540#10566#0#PHP" expanded="true" />
+            <element signature="e#13444#13470#0#PHP" expanded="true" />
+            <element signature="e#14479#14505#0#PHP" expanded="true" />
+            <element signature="e#15506#15532#0#PHP" expanded="true" />
+            <element signature="e#16533#16559#0#PHP" expanded="true" />
+            <element signature="e#17568#17594#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
